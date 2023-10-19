@@ -29,11 +29,9 @@ def start_MLR(fileName):
     dataset = pd.read_csv(fileName, header=None)
     
     #提取特征，0列为面积，1列为利润，X、Y为n行1列的列表，需要用函数转换
-    space_feature = dataset[0]
-    bedroom_feature = dataset[1]
+    space_bedroom_feature = dataset[[0,1]]
     price_feature = dataset[2]
-    X = np.reshape(space_feature.values, (-1, 1))
-    Y = np.reshape(bedroom_feature.values, (-1, 1))
+    X = np.reshape(space_bedroom_feature.values, (-1, 1))
     Z = np.reshape(price_feature.values, (-1, 1))
     
     #画出数据集

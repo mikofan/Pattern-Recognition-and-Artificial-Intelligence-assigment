@@ -22,6 +22,11 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
+#中文正常显示
+plt.rcParams['font.sans-serif'] = ['SimHei']
+#负号正常显示
+plt.rcParams['axes.unicode_minus'] = False
+
 def start_LR(fileName):
     #读取文件，因为本txt没有列名，所以header=None
     dataset = pd.read_csv(fileName, header=None)
@@ -35,6 +40,9 @@ def start_LR(fileName):
     #画出数据集
     print("This is the map of datasets of squares and incomes:\n")
     plt.scatter(X, Y, color='red')
+    plt.xlabel('城市面积大小')
+    plt.ylabel('餐厅利润')
+    plt.title('所有数据的分布情况')
     plt.show()
     plt.clf()
     #画完记得清图，为之后的画做准备
@@ -49,6 +57,9 @@ def start_LR(fileName):
     plt.scatter(X_test, Y_test, color='red')
     #线图，蓝色表示对测试集进行预测的结果
     plt.plot(X_test, Y_pred, color='blue')
+    plt.xlabel('城市面积大小')
+    plt.ylabel('餐厅利润')
+    plt.title('测试集以及预测结果')
     plt.show()
     plt.clf()
     
