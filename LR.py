@@ -44,8 +44,8 @@ def start_LR(fileName):
     plt.ylabel('餐厅利润')
     plt.title('所有数据的分布情况')
     plt.show()
-    plt.clf()
-    #画完记得清图，为之后的画做准备
+    #plt.clf()
+    #画完记得清图，为之后的画做准备，不清不会出问题
     
     #开始训练
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.25, random_state=0)
@@ -61,7 +61,7 @@ def start_LR(fileName):
     plt.ylabel('餐厅利润')
     plt.title('测试集以及预测结果')
     plt.show()
-    plt.clf()
+    #plt.clf()
     
     #预测在面积大小为3.1415的城市开一家餐厅的预计利润
     incomes = regressor.predict([[3.1415]])
